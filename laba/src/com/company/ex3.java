@@ -4,22 +4,22 @@ import java.util.regex.Pattern;
 public class ex3 {
     private String[] array;
     public boolean isDate(String date) {
-        Pattern pattern = Pattern.compile("^[1-31|1-12]+.[1-12|1-31]+.[0-45000000000]+$");
+        Pattern pattern = Pattern.compile("^([0-2][0-9]||3[0-1]).(0[0-9]||1[0-2]).([0-9][0-9])?[0-9][0-9]$");
         return pattern.matcher(date).matches();
     }
-    public void change(String date){
+    public String[] change(String date){
         this.array = date.split(" ");
-        Pattern pattern = Pattern.compile("^[1-12]+.[1-31]+.[0-45000000000]");
+        Pattern pattern = Pattern.compile("^([0-2][0-9]||3[0-1]).(0[0-9]||1[0-2]).([0-9][0-9])?[0-9][0-9]$");
+        String[] newarr = new String[this.array.length];
+        int i = 0;
         for(String s: this.array) {
-            System.out.println(s);
-            String news = "";
             if (pattern.matcher(s).matches()) {
-                news = s.substring(3,4)+"."+s.substring(0,1)+"."+s.substring(5);
+                s = pattern.matcher(date).replaceAll("11.02.2019");
 
             }
-        System.out.println(news);
-
+            newarr[i]=s;
+            i++;
         }
-
+        return newarr;
     }
 }

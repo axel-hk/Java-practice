@@ -28,7 +28,7 @@ public class ex1 {
         return newstr;
 
     }
-    public  void list()
+    public  int[] list()
     {
         int[] decimal = new int[this.array.length];
         int i =0;
@@ -40,15 +40,13 @@ public class ex1 {
             i++;
         }
         Arrays.sort(decimal, 0, i);
-        for(int j = 0; j<decimal.length; j++)
-        {
-        System.out.println(decimal[j]);
-        }
+        return decimal;
 
     }
-    public  void rate()
+    public  String[] rate()
     {
         String temp = "";
+        String[] arr = new String[this.array.length];
         for(int i = 0; i< this.array.length; i++){
             for (int j = this.array.length-1; j > i; j--) {
                 String somedec = (this.array[j-1].split(" "))[1];
@@ -65,17 +63,17 @@ public class ex1 {
             }
         }
         for(int q = 0; q< this.array.length; q++){
-            System.out.println(q+1+". "+this.array[q]);
+            arr[q] = Integer.toString(q+1)+". "+this.array[q];
         }
-
+        return arr;
     }
 
-    public  void search()
+    public  String search()
     {
       System.out.println("Введите номер продажи: ");
         Scanner scan = new Scanner(System.in);
         int num = scan.nextInt();
-        System.out.println(this.array[num-1]);
+        return this.array[num-1];
 
     }
 

@@ -1,4 +1,5 @@
 package com.company;
+import java.util.Arrays;
 import  java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -22,23 +23,27 @@ public class Main {
                         ex1 E = new ex1(str);
                         System.out.println(E.sum());
                         System.out.println(E.firstUpperCase());
-                        E.list();
-                        E.rate();
-                        E.search();
+                        System.out.println(E.list());
+                        System.out.println(E.rate());
+                        System.out.println(E.search());
                         break;
                     case 2:
                         StringBuilder strb = new StringBuilder(str);
                         ex2 E2 = new ex2(strb);
-                        E2.del();
-                        E2.change();
-                        E2.add();
+                        System.out.println(E2.del());
+                        System.out.println(Arrays.toString(E2.change()));
+                        System.out.println("Введите информацию о новой продаже: ");
+                        Scanner scan = new Scanner(System.in);
+                        String strin = scan.nextLine();
+                        System.out.println(E2.add(strin));
                         break;
                     case 3:
                         ex3 E3 = new ex3();
                         if (E3.isDate(str)) {
-                            System.out.println("Строка является мейлом");
-                        } else {
-                            System.out.println("Строка не является мейлом");
+                            System.out.println("Строка является датой");
+                        }
+                        else {
+                            System.out.println("Строка не является датой");
                         }
                         E3.change(str);
                         break;
