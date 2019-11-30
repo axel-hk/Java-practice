@@ -18,6 +18,6 @@ public class Parlay {
     { if (this.sum != 0){
         return this.sum;}
         else{return 0;}}
-    public int addSum(int sum){ int s = sum; return s;}
+    public int addSum(int sum){ this.sum = sum; return this.sum;}
 
 }
